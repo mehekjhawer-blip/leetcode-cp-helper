@@ -5,10 +5,10 @@
   "publisher": "MehekJhawer",
   "icon": "media/icon.png",
   "license": "MIT",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/leetcode-cp-helper"
+    "url": "https://github.com/mehekjhawer-blip/leetcode-cp-helper"
   },
   "engines": {
     "vscode": "^1.85.0"
