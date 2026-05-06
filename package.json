@@ -1,0 +1,122 @@
+{
+  "name": "leetcode-cp-helper",
+  "displayName": "leetcode-cp-helper",
+  "description": "Fetch LeetCode problems, generate boilerplate, run test cases",
+  "publisher": "MehekJhawer",
+  "icon": "media/icon.png",
+  "license": "MIT",
+  "version": "0.2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/leetcode-cp-helper"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "cphelper.fetchProblem",
+        "title": "CP Helper: Fetch LeetCode Problem"
+      },
+      {
+        "command": "cphelper.fetchProblemBySlug",
+        "title": "CP Helper: Fetch Problem By Slug"
+      },
+      {
+        "command": "cphelper.runTests",
+        "title": "CP Helper: Run Test Cases"
+      },
+      {
+        "command": "cphelper.browse",
+        "title": "CP Helper: Browse Problems"
+      },
+      {
+        "command": "cphelper.startTimer",
+        "title": "CP Helper: Start Timer"
+      },
+      {
+        "command": "cphelper.stopTimer",
+        "title": "CP Helper: Stop Timer"
+      },
+      {
+        "command": "cphelper.dashboard",
+        "title": "CP Helper: Show Dashboard"
+      },
+      {
+        "command": "cphelper.markSolved",
+        "title": "CP Helper: Mark Problem Solved"
+      },
+      {
+        "command": "cphelper.addNote",
+        "title": "CP Helper: Add Note to Problem"
+      },
+      {
+        "command": "cphelper.submit",
+        "title": "CP Helper: Submit Solution"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "cphelper-sidebar",
+          "title": "CP Helper",
+          "icon": "media/icon.png"
+        }
+      ]
+    },
+    "views": {
+      "cphelper-sidebar": [
+        {
+          "type": "webview",
+          "id": "cphelper.sidebarView",
+          "name": "LeetCode CP Helper",
+          "icon": "media/icon.png"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "CP Helper",
+      "properties": {
+        "cphelper.language": {
+          "type": "string",
+          "default": "cpp",
+          "enum": [
+            "cpp",
+            "python",
+            "java",
+            "javascript"
+          ],
+          "description": "Default language for boilerplate generation"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^8.3.0",
+    "@typescript-eslint/parser": "^8.3.0",
+    "eslint": "^9.9.1",
+    "typescript": "^5.3.0",
+    "vsce": "^2.15.0"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "cheerio": "^1.0.0-rc.12"
+  }
+}
